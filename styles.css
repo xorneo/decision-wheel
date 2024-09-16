@@ -8,39 +8,40 @@ body {
 }
 
 .container {
-    margin-top: 50px;
-    padding: 20px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 .input-section {
-    margin-bottom: 30px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
     border: 1px solid #00ff00;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     display: inline-block;
     text-align: center;
-    width: auto;
+    width: 90%; /* Full width on smaller screens */
+    max-width: 500px; /* Set max width for larger screens */
 }
 
 .centered-inputs {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Three columns per row */
-    column-gap: 20px; /* Add spacing between columns */
-    row-gap: 20px; /* Add spacing between rows */
-    justify-content: center; /* Center the entire grid */
+    column-gap: 15px;
+    row-gap: 15px;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .input-section input.decision-input {
-    padding: 10px;
-    font-size: 16px;
-    width: 80%; /* Reduced width to 80% */
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
     margin-right: 0;
     border: 1px solid #00ff00;
     background-color: #000;
@@ -49,12 +50,12 @@ h1 {
 }
 
 .input-section button {
-    padding: 10px 20px;
+    padding: 8px 15px;
     background-color: #00ff00;
     border: none;
     color: black;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -67,28 +68,30 @@ h1 {
     margin-top: 30px;
     position: relative;
     display: inline-block;
+    width: 100%; /* Ensure the container takes up full width on mobile */
+    max-width: 500px; /* Max width to prevent it from being too large */
 }
 
 .pointer {
     width: 0;
     height: 0;
     position: absolute;
-    top: -40px;  /* Positioned just above the wheel */
-    left: calc(50% - 20px); /* Center the pointer horizontally */
+    top: -40px;  
+    left: calc(50% - 20px);
     border-left: 20px solid transparent;
     border-right: 20px solid transparent;
-    border-top: 30px solid #00ff00;  /* Pointer facing down */
-    z-index: 2;  /* Ensure the pointer is above the wheel */
+    border-top: 30px solid #00ff00;  
+    z-index: 2;  
 }
 
 .wheel {
     position: relative;
     margin: 0 auto;
-    padding: 20px;
     background-color: #111;
     border-radius: 50%;
-    width: 520px;
-    height: 520px;
+    width: 90%;  /* Full width on mobile */
+    max-width: 400px;  /* Set max width on larger screens */
+    height: auto;  /* Allow height to adjust automatically */
     box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
 }
 
@@ -114,11 +117,43 @@ h1 {
 }
 
 canvas {
+    width: 100%; /* Ensure canvas scales */
+    max-width: 400px; /* Set max width for canvas */
+    height: auto;  /* Adjust height automatically */
     border-radius: 50%;
 }
 
 #result {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 20px;
     color: #00ff00;
+}
+
+/* Media Queries for smaller screens */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    .input-section {
+        width: 100%; /* Take full width on smaller screens */
+    }
+    
+    .centered-inputs {
+        grid-template-columns: 1fr; /* Stack input boxes on small screens */
+    }
+    
+    .input-section button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    
+    .spin-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    #result {
+        font-size: 18px;
+    }
 }
