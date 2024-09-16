@@ -1,0 +1,124 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000;
+    color: #00ff00;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.input-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: inline-block;
+    text-align: center;
+    width: auto;
+}
+
+.centered-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns per row */
+    column-gap: 20px; /* Add spacing between columns */
+    row-gap: 20px; /* Add spacing between rows */
+    justify-content: center; /* Center the entire grid */
+    margin-bottom: 20px;
+}
+
+.input-section input.decision-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%; /* Reduced width to 80% */
+    margin-right: 0;
+    border: 1px solid #00ff00;
+    background-color: #000;
+    color: #00ff00;
+    border-radius: 5px;
+}
+
+.input-section button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.input-section button:hover {
+    background-color: #00cc00;
+}
+
+.wheel-container {
+    margin-top: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.pointer {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -40px;  /* Positioned just above the wheel */
+    left: calc(50% - 20px); /* Center the pointer horizontally */
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #00ff00;  /* Pointer facing down */
+    z-index: 2;  /* Ensure the pointer is above the wheel */
+}
+
+.wheel {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 50%;
+    width: 520px;
+    height: 520px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+}
+
+.spin-button-container {
+    margin-top: 20px;
+}
+
+.spin-button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+    transition: transform 0.3s;
+}
+
+.spin-button:hover {
+    transform: scale(1.1);
+}
+
+canvas {
+    border-radius: 50%;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #00ff00;
+}
